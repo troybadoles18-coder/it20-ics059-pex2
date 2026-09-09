@@ -11,7 +11,6 @@ class Node {
 class StudentLinkedList {
     Node head;
 
-    // 1 & 2. Insert at the end
     public void append(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -25,14 +24,14 @@ class StudentLinkedList {
         current.next = newNode;
     }
 
-    // 4. Add a new value at the beginning
+    
     public void insertAtBeginning(int data) {
         Node newNode = new Node(data);
         newNode.next = head;
         head = newNode;
     }
 
-    // 5. Search for a specified value
+    
     public boolean search(int value) {
         Node current = head;
         while (current != null) {
@@ -63,7 +62,7 @@ class StudentLinkedList {
         }
     }
 
-    // 3 & 7. Display all values
+    
     public void display() {
         Node current = head;
         while (current != null) {
@@ -72,3 +71,39 @@ class StudentLinkedList {
         }
         System.out.println("null");
     }
+ public static void main(String[] args) {
+        StudentLinkedList list = new StudentLinkedList();
+
+        
+        list.append(101);
+        list.append(102);
+        list.append(103);
+        list.append(104);
+        list.append(105);
+
+        // 3. Display initial values
+        System.out.print("Initial:\n");
+        list.display();
+        System.out.println();
+
+        System.out.println("Insert 100:");
+        list.insertAtBeginning(100);
+        list.display();
+        System.out.println();
+
+        int searchValue = 103;
+        if (list.search(searchValue)) {
+            System.out.println("Search " + searchValue + ": Found");
+        } else {
+            System.out.println("Search " + searchValue + ": Not Found");
+        }
+        System.out.println();
+
+        
+        System.out.println("Delete 103:");
+        list.delete(103);
+
+        // 7. Display final linked list
+        list.display();
+    }
+}
