@@ -43,7 +43,6 @@ class StudentLinkedList {
         return false;
     }
 
-    // 6. Delete a specified value
     public void delete(int value) {
         if (head == null) return;
 
@@ -81,7 +80,7 @@ class StudentLinkedList {
         list.append(104);
         list.append(105);
 
-        // 3. Display initial values
+       
         System.out.print("Initial:\n");
         list.display();
         System.out.println();
@@ -103,7 +102,7 @@ class StudentLinkedList {
         System.out.println("Delete 103:");
         list.delete(103);
 
-        // 7. Display final linked list
+       
         list.display();
     }
 }
